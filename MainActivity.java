@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
             button_params[i] = (RelativeLayout.LayoutParams) buttons[i].getLayoutParams();
             button_params[i].width = width / 4;
             button_params[i].height = (int) (height * 0.7 / 5);
+            buttons[i].setTextSize((float) (height * 0.7 / 5 * 0.5));
             buttons[i].setLayoutParams(button_params[i]);
         }
 
