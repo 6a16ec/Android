@@ -38,42 +38,15 @@ public class MainActivity extends Activity {
         
         final RelativeLayout.LayoutParams[] button_params = new RelativeLayout.LayoutParams[button_count];
 
-        int width = width();
+        int width = width(); int height = height();
 
         for(int i = 0; i < button_count; i++){
             buttons[i] = (Button)findViewById(button_ids[i]);
             button_params[i] = (RelativeLayout.LayoutParams) buttons[i].getLayoutParams();
             button_params[i].width = width / 4;
+            button_params[i].height = (int) (height * 0.7 / 5);
             buttons[i].setLayoutParams(button_params[i]);
         }
-        
-        
-//        Button bt1, bt2, bt3, bt4;
-//
-//        bt1 = (Button)findViewById(R.id.button1);bt2 = (Button)findViewById(R.id.button2);bt3 = (Button)findViewById(R.id.button3);bt4 = (Button)findViewById(R.id.button4);
-//        final RelativeLayout.LayoutParams layoutparams1 = (RelativeLayout.LayoutParams) bt1.getLayoutParams();
-//        final RelativeLayout.LayoutParams layoutparams2 = (RelativeLayout.LayoutParams) bt2.getLayoutParams();
-//        final RelativeLayout.LayoutParams layoutparams3 = (RelativeLayout.LayoutParams) bt3.getLayoutParams();
-//        final RelativeLayout.LayoutParams layoutparams4 = (RelativeLayout.LayoutParams) bt4.getLayoutParams();
-//
-//        Display display = getWindowManager().getDefaultDisplay();
-//        Point size = new Point();
-//        display.getSize(size);
-//
-//        layoutparams1.width = size.x / 4;
-//
-//        layoutparams2.width = size.x / 4;
-//
-//        layoutparams3.width = size.x / 4;
-//
-//        layoutparams4.width = size.x / 4;
-//
-//        //layoutparams.height = size.y - 100;
-//
-//        bt1.setLayoutParams(layoutparams1);
-//        bt2.setLayoutParams(layoutparams2);
-//        bt3.setLayoutParams(layoutparams3);
-//        bt4.setLayoutParams(layoutparams4);
 
     }
 
@@ -82,5 +55,11 @@ public class MainActivity extends Activity {
         Point size = new Point();
         display.getSize(size);
         return size.x;
+    }
+    protected int height(){
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.y;
     }
 }
